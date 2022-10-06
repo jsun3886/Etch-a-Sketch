@@ -7,7 +7,13 @@ for (row=0; row<16;row++){
         square = document.createElement('div');
         square.setAttribute('class', "square");
         square.textContent='square';
+        square.addEventListener('mouseover',colorsquare)
         divRow.appendChild(square);
     }
     page.appendChild(divRow);
+}
+
+function colorsquare(){
+    this.classList.add('colored');
+
 }
