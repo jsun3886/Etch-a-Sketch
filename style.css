@@ -1,33 +1,51 @@
+body{
+    display: flex;
+    flex-direction: row;
+}
+
 .row{
     display: flex;
     flex-direction: row;
-    border: 1px black solid;
-    width: 800px;
+    /*border: 1px black solid; this is for debugging to make sure the rows are generated correctly.*/
+    
     
     margin: 0px;
     padding: 0px;
 
 
 }
+button{
+    display: flex;
+    min-height: 30px;
+}
 
 .main{
     display: flex;
     flex-direction: column;
-    width: 90%;
     margin: 0px;
     padding: 0px;
+    width: fit-content;
+    border: 8px solid black;
+   
 }
-
-
+.colorboard{
+    display: flex;
+    height: fit-content;
+}
+.swatch{
+    display: flex;
+    height: 30px;
+    width: 30px;
+}
 .square{
     display: flex;
-    border: 1px solid black;
+    /*border: 1px solid black;  this is for debugging makeing sure the squares are the right size*/
     transition: all .01s ease;
 }
 
 .deleteing{
-    transform: translateY(10px);
-    transition-duration: 1s;
+    transform: translateY(50px);
+    transition-duration: 0.5s;
 }
 
 .colored{

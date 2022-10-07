@@ -1,6 +1,6 @@
-page = document.querySelector(".main");
-
-
+spage = document.querySelector(".main");
+currentColor = 'blue';
+let screenWidth=screen.width
 function createBoard(size){
     page = document.querySelector(".main");
 
@@ -8,8 +8,10 @@ function createBoard(size){
         divRow= document.createElement('div')
         divRow.setAttribute('class','row')
         divRow.addEventListener('transitionend',removetransmition);
-        high= Math.round(800/size);
+        boardSize=Math.min(screenWidth,screen.height-100)
+        high= Math.round(((boardSize-50)/size));
         divRow.style.height =`${high}px`
+        divRow.style.width= (boardSize-50);
         for (col=0; col<size; col++){
             square = document.createElement('div');
             square.setAttribute('class', "square");
@@ -26,7 +28,7 @@ function createBoard(size){
     }
 }
 function colorsquare(){
-    this.classList.add('colored');
+    this.style.backgroundColor=currentColor;
 
 }
 
@@ -55,13 +57,46 @@ board.forEach(element => {element.classList.add('deleteing');
 setSizeButton= document.querySelector('.numSquaresButton')
 setSizeButton.addEventListener('click',resizeBoard)
 
+
 function removetransmition(e){
     if(e.propertyName != 'transform'){return ;}
     this.remove();
   }
   
+function createBigColorBoard(){
+    panel= document.querySelector(".colorboard");
+    
+    for(r=0;r<255;r=r+20){
+        for(g=0;g<255;g=g+20){
+            for(b=0;b<255;b=b+20){
+                swatch= document.createElement('div');
+                swatch.classList.add('swatch');
+                swatch.style.backgroundColor=`rgba(${r},${g},${b},1`;
+                
+                
+                console.log(swatch);
+                panel.appendChild(swatch);
 
+            }
+        }
 
+    }
 
+}
+colorArray=['red','orange','yellow','green','blue','violet','black']
+colorArray.forEach(color=>addSwatch(color))
+    
+ 
+function addSwatch(color){
+    panel= document.querySelector(".colorboard");
+    swatch= document.createElement('div');
+    swatch.classList.add('swatch');
+    swatch.style.backgroundColor=color
+    swatch.addEventListener('click',changeColor)
+    panel.appendChild(swatch);
+}
 
-createBoard(16)
+function changeColor(){
+    currentColor=this.style.backgroundColor;
+}
+createBoard(16);
