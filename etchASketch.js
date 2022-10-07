@@ -1,6 +1,8 @@
-spage = document.querySelector(".main");
-currentColor = 'blue';
+var page = document.querySelector(".main");
+var currentColor = 'blue';
 let screenWidth=screen.width
+
+
 function createBoard(size){
     page = document.querySelector(".main");
     boardSize=Math.min(screenWidth,screen.height-100)
