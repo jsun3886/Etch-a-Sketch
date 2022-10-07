@@ -3,13 +3,16 @@ currentColor = 'blue';
 let screenWidth=screen.width
 function createBoard(size){
     page = document.querySelector(".main");
-
+    boardSize=Math.min(screenWidth,screen.height-100)
+    boardSize-=100;
+    high= Math.round(((boardSize)/size));
+    knobPLace= document.querySelector('.knobs');
+    knobPLace.style.width=`${boardSize+75}px`;
     for (row=0; row<size;row++){
         divRow= document.createElement('div')
         divRow.setAttribute('class','row')
         divRow.addEventListener('transitionend',removetransmition);
-        boardSize=Math.min(screenWidth,screen.height-100)
-        high= Math.round(((boardSize-50)/size));
+        
         divRow.style.height =`${high}px`
         divRow.style.width= (boardSize-50);
         for (col=0; col<size; col++){
