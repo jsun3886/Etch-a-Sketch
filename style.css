@@ -22,8 +22,12 @@
 .square{
     display: flex;
     border: 1px solid black;
-   
+    transition: all .01s ease;
+}
 
+.deleteing{
+    transform: translateY(10px);
+    transition-duration: 1s;
 }
 
 .colored{
