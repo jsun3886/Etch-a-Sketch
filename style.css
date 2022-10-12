@@ -39,7 +39,7 @@ body{
     width: fit-content;
     border: 40px solid red;
     border-radius: 8px;
-    background-color: lightgrey;
+    background-color: #d3d3d3;
    
 }
 .etchASketch{
@@ -50,6 +50,8 @@ body{
     display: flex;
     /*border: 1px solid black;  this is for debugging makeing sure the squares are the right size*/
     transition: all .01s ease;
+    opacity: 1.0;
+    
 }
 
 .deleteing{
@@ -58,7 +60,7 @@ body{
 }
 
 .colored{
-    background-color: blue;
+    background-color: #0000ff;
 }
 
 .knobs{
@@ -77,18 +79,81 @@ body{
     border: 5px dotted gainsboro;
     transform: translateY(-75px);
 }
-
+h3{
+    margin-left: 30px;
+    justify-content: center;
+}
 .controlBoard{
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: darkgrey;
     margin-left: 50px;
+    padding:12px;
+    margin-top: 250px;
+    margin-bottom: 300px;
+    border: 10px solid black;
+    font-size: 20px;
 
+}
+.numSquaresButton{
+    font-size: 20px;
+    justify-content: center;
+}
+img{
+    width:20px;
+    height:20px;
+   
+    background-color: darkgray;
+}
+.picker{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: #d3d3d3 6px solid;
 }
 .colorboard{
     display: flex;
+    justify-content: center;
     height: fit-content;
+    margin: 12px;
+    padding:8px;
 }
 .swatch{
     display: flex;
     height: 30px;
     width: 30px;
 }
+.randomColor{
+  
+    margin:8px;
+    font-size: 18px;
+}
+.randomColor.Pressed{
+    background-image:linear-gradient(red 0%,orange 15%,yellow 30%,green 45%,blue 60%,violet 75%,black 100%);
+}
+
+.ghost{
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.Pressed{
+    border: 1px inset;
+    color:white;
+}
+.ghost.Pressed{
+    background-color: #0000ff;
+    
+}
+
+.ghostBuster{
+    font-size: 20px;
+    margin-top: 10px;
+
+}
+
+.ghostBuster.Pressed{
+    background-color: #0000ff;
+}
+
