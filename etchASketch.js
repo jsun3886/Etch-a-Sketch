@@ -142,7 +142,11 @@ function fadeOutMode(){
         fadeOut= false; 
     }
 }
+/* makes sure you can only select one mode at a time
+selected is the mode that is pressed only that button will be inset
+the rest of the modes will be set to false, and buttons have their Pressed class removed if it was there. 
 
+*/
 function deselect(selected){
 darkerButton.classList.remove('Pressed');
 makeDark=false;
@@ -168,7 +172,7 @@ switch(selected){
 
 
 }
-
+// event listeners are set up for the various buttons. 
 setSizeButton= document.querySelector('.numSquaresButton')
 setSizeButton.addEventListener('click',resizeBoard)
 
@@ -182,6 +186,8 @@ fadeOutButton.addEventListener('click',fadeOutMode);
 fadeInButton = document.querySelector('.ghostBuster');
 fadeInButton.addEventListener('click',fadeInMode);
 
+
+// board and color swatches are initially created
 createBoard(16);
 colorArray=['#ff0000','#ffa500','#ffff00','#00ff00','#0000ff','#ee82ee','#000000']
 colorArray.forEach(color=>addSwatch(color))
